@@ -2,20 +2,20 @@
 <https://github.com/lixiaoyang1996/testCss>
 
 ###一、碰撞球动画（雨滴）（这是基于js与简单动画Canvas完成效果）
-**程序逻辑**:
-        1、设置Canvas元素的大小和浏览器窗口一样
-           1.1:获取Canvas元素
-            1.2:获取浏览器窗口大小
-            1.3:给Canvas元素设置大小
-            1.4:当浏览器窗口大小发生变化时，重新设置一下Canvas大小
-        2、如何利用Canvas绘制图形
-            2.1:拿到绘画区域
-        3、怎么实现Canvas动画
-            3.1:每隔1/60s画一张画
-            3.2:每次画的画中间的球位置都不一样
-        4、画小球球，200个
+ + **程序逻辑**:
+    + 设置Canvas元素的大小和浏览器窗口一样
+        - 获取Canvas元素
+        - 获取浏览器窗口大小
+        - 给Canvas元素设置大小
+        - 当浏览器窗口大小发生变化时，重新设置一下Canvas大小
+    + 如何利用Canvas绘制图形
+        - 拿到绘画区域
+    + 怎么实现Canvas动画
+        - 每隔1/60s画一张画
+        - 每次画的画中间的球位置都不一样
+    + 画小球球，200个
 
-**核心代码**:
++ **核心代码**:
         ```
         function create(num) {
             for (var i = 0; i < num; i++) {
@@ -35,18 +35,18 @@
         }, 1000 / 60);
         ```
         
-**效果展示:**
++ **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png)
 
 
 
 ###二、旋转太极图（基于简单css动画完成效果）
-**程序逻辑**:
-1、构建静态图
-2、利用transform和animation完成动态效果
-3、规范css代码以及完善HTML界面符合图标布局
++ **程序逻辑:**
+    - 构建静态图
+    - 利用transform和animation完成动态效果
+    - 规范css代码以及完善HTML界面符合图标布局
 
-**核心代码**:
++ **核心代码**:
 ```
   <i class="taichi"></i>
 
@@ -67,16 +67,16 @@
     }
 }
 ```
-**效果展示:**
+ + **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/taiChi.png)
 
 ###三、网站列表效果图（基于简单css动画完成效果）
-**程序逻辑**:
-1、构建静态图
-2、利用transform完成动态效果
-3、规范css代码以及完善HTML界面符合图标布局
++ **程序逻辑**:
+    - 构建静态图
+    - 利用transform完成动态效果
+    - 规范css代码以及完善HTML界面符合图标布局
 
-**核心代码**:
++ **核心代码**:
 ```
 .box ul {
     display: flex;
@@ -111,7 +111,7 @@
     transform: translateY(-180px) scale(1);
 }
 ```
-**效果展示:**
++ **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/index.png)
 
 
