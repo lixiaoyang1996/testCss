@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+}
+
+body {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; */
+    background-color: gray;
+}
+
+.taichi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(black 50%, white 50%);
+    margin: 100px auto;
+    border-radius: 50%;
+}
+
+.taichi:before,
+.taichi:after {
+    /*并列选择器:同时选择多个元素并设置相同属性值*/
+    display: block;
+    content: "";
+    width: 50%;
+    height:50%;
+    border-radius: 50%;
+    animation: onepiece 1s infinite alternate linear;
+    /*动画:动画名称 播放时长 不停的播 到过来播 匀速播*/
+}
+
+.taichi:before {
+    background: radial-gradient(black 25%, white 25%);
+    /* transform: scale(1.5); */
+    /* animation: onepiece 1s infinite alternate;
+    动画:动画名称 播放时长 不停的播 到过来播 */
+    transform-origin: 0% 50%;
+}
+
+.taichi:after {
+    /*background-color: #fff;
+    border: 70px solid #000; */
+    background: radial-gradient(white 25%, black 25%);
+    animation-delay: -1s;
+    /*提前1s*/
+    transform-origin: 100% 50%
+}
+
+@keyframes onepiece {
+    from {
+        /*一开始*/
+        transform: scale(0.5);
+    }
+    to {
+        /*最终*/
+        transform: scale(1.5);
+    }
+}

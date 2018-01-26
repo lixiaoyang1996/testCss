@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keyword" content="Ball,JS">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>碰撞球</title>
+</head>
+<style>
+    #myCanvas {
+        display: block;
+    }
+</style>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        /*
+        ecmascript
+        Dom:DOCUMENT
+        Bom:window
+        程序逻辑：
+        1:设置Canvas元素的大小和浏览器窗口一样
+            1.1、获取Canvas元素
+            1.2、获取浏览器窗口大小
+            1.3.给Canvas元素设置大小
+            1.4、当浏览器窗口大小发生变化时，重新设置一下Canvas大小
+        2:如何利用Canvas绘制图形
+            2.1、拿到绘画区域
+        3:怎么实现Canvas动画
+            3.1:每隔1/60s画一张画
+            3.2:每次画的画中间的球位置都不一样
+        4:画小球球，200个
+        */
+
+        var canvas = document.querySelector("#myCanvas");
+        var w, h;
+        var aColor = ["#FFCCCC", "#CC9999", "#CC9966", "#FFCC99", "", "#993333"];
+        var aBubble = [];
+        /*逆执行函数---~~()*/
+        ~~ function setSize() {
+            window.onresize = arguments.callee;
+            w = window.innerWidth; //浏览器窗口宽度
+            h = window.innerHeight; //浏览器串口高度
+            canvas.width = w;
+            canvas.height = h;
+        }();
+
+        var canCon = canvas.getContext("2d"); //卷轴上的宣纸
+
+        /*
+        canCon.fillStyle = "red";//拿起一支笔并沾上红色的墨
+        canCon.arc(200,200,50,0,Math.PI*2);//圆心位置x坐标 y坐标 r半径
+        canCon.fill();//画画
+        */
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function Bubble() {}; //小球DNA ，木有基因
+        Bubble.prototype = {
+            init: function () { //小球球的出场配置
+                this.x = random(0, w); //小球球的圆心x坐标位置
+                this.y = random(0, h); //小球球的圆心坐标位置
+                this.r = random(1, 5); //小球球的半径
+                this.color = aColor[Math.floor(random(0, 5))]; //小球球的颜色
+                this.mx = random(-1,1); //小球球x坐标一次移多少
+                this.my = random(-1,1); //小球球y坐标一次移多少
+            },
+            draw: function () {
+                canCon.beginPath(); //把笔抬起来
+                canCon.fillStyle = this.color; //拿起一支笔并沾上红色的墨
+                canCon.arc(this.x, this.y, this.r, 0, Math.PI * 2); //圆心位置x坐标 y坐标 r半径
+                canCon.fill(); //画画
+            },
+            move: function () {
+                this.x += this.mx;
+                this.y += this.my;
+                if(this.x-this.r<0||this.x+this.r>w){
+                    this.mx=-this.mx;
+                }
+                if(this.y-this.r<0||this.y+this.r>h){
+                    this.my=-this.my;
+                }
+                this.draw();
+            }
+        }
+        //复用性，封装成函数
+        function create(num) {
+            for (var i = 0; i < num; i++) {
+                var bubble = new Bubble(); //生出一个小球
+                bubble.init();
+                bubble.draw();
+                aBubble.push(bubble);//每一个新生成的小球球放到数组里
+            }
+        }
+        create(300);
+        setInterval(function () {
+            canCon.clearRect(0,0,w,h);
+            for(var item of aBubble){
+                item.move();
+                // console.log(item);
+            }
+        }, 1000 / 60);
+    </script>
+</body>
+
+</html>
