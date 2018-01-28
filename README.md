@@ -114,6 +114,81 @@
 + **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/index.png)
 
++ **效果展示:**
+![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png)
+
+
+
+###二、旋转太极图（基于简单css动画完成效果）
++ **程序逻辑:**
+    - 构建静态图
+    - 利用transform和animation完成动态效果
+    - 规范css代码以及完善HTML界面符合图标布局
+
++ **核心代码**:
+```
+  <i class="taichi"></i>
+
+  animation: onepiece 1s infinite alternate linear;
+  /*动画:动画名称 播放时长 不停的播 到过来播 匀速播*/
+
+  transform-origin: 100% 50%
+  /*提前1s*/
+
+  @keyframes onepiece {
+    from {
+        /*一开始*/
+        transform: scale(0.5);
+    }
+    to {
+        /*最终*/
+        transform: scale(1.5);
+    }
+}
+```
+ + **效果展示:**
+![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/taiChi.png)
+
+###四、3D曼陀罗导航栏效果图（基于简单css动画完成效果）
++ **程序逻辑**:
+    - 构建静态图
+    - 利用transform完成动态效果
+    - 规范css代码以及完善HTML界面符合图标布局
+
++ **核心代码**:
+```
+.menu >li {
+    /*选择子元素*/
+    float: left;
+}
+
+.submenu {
+    height: 0;
+    perspective: 400px;
+    /*镜深*/
+}
+
+.submenu li {
+    transform: rotateY(90deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.menu>li:hover .submenu li {
+    transform: rotateY(0deg);
+}
+
+.menu li:hover .submenu li:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.submenu li:nth-child(8) {
+    transition-delay: 0ms;
+}
+```
++ **效果展示:**
+![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/nav.png)
+
 
 
 

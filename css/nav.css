@@ -31,7 +31,7 @@ body {
     padding: 18px 25px;
 }
 
-.menu 4 :hover{
+.menu li :hover{
     border-left: 2px saddlebrown solid;
 }
 
