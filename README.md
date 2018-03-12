@@ -1,52 +1,37 @@
-#基于css3完成三种动画
+#基于 css3 完成三种动画
 <https://github.com/lixiaoyang1996/testCss>
 
-###一、碰撞球动画（雨滴）（这是基于js与简单动画Canvas完成效果）
- + **程序逻辑**:
-    + 设置Canvas元素的大小和浏览器窗口一样
-        - 获取Canvas元素
-        - 获取浏览器窗口大小
-        - 给Canvas元素设置大小
-        - 当浏览器窗口大小发生变化时，重新设置一下Canvas大小
-    + 如何利用Canvas绘制图形
-        - 拿到绘画区域
-    + 怎么实现Canvas动画
-        - 每隔1/60s画一张画
-        - 每次画的画中间的球位置都不一样
-    + 画小球球，200个
+###一、碰撞球动画（雨滴）（这是基于 js 与简单动画 Canvas 完成效果）
 
-+ **核心代码**:
-        ```
-        function create(num) {
-            for (var i = 0; i < num; i++) {
-                var bubble = new Bubble(); //生出一个小球
-                bubble.init();
-                bubble.draw();
-                aBubble.push(bubble);//每一个新生成的小球球放到数组里
-            }
-        }
-        create(300);
-        setInterval(function () {
-            canCon.clearRect(0,0,w,h);
-            for(var item of aBubble){
-                item.move();
-                // console.log(item);
-            }
-        }, 1000 / 60);
-        ```
-        
-+ **效果展示:**
-![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png)
+* **程序逻辑**:
 
+  * 设置 Canvas 元素的大小和浏览器窗口一样
+    * 获取 Canvas 元素
+    * 获取浏览器窗口大小
+    * 给 Canvas 元素设置大小
+    * 当浏览器窗口大小发生变化时，重新设置一下 Canvas 大小
+  * 如何利用 Canvas 绘制图形
+    * 拿到绘画区域
+  * 怎么实现 Canvas 动画
+    * 每隔 1/60s 画一张画
+    * 每次画的画中间的球位置都不一样
+  * 画小球球，200 个
 
+* **核心代码**:
+  `function create(num) { for (var i = 0; i < num; i++) { var bubble = new Bubble(); //生出一个小球 bubble.init(); bubble.draw(); aBubble.push(bubble);//每一个新生成的小球球放到数组里 } } create(300); setInterval(function () { canCon.clearRect(0,0,w,h); for(var item of aBubble){ item.move(); // console.log(item); } }, 1000 / 60);`
+* **效果展示:**
+  ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png)
 
-###二、旋转太极图（基于简单css动画完成效果）
-+ **程序逻辑:**
-    - 构建静态图
-    - 利用transform和animation完成动态效果
-    - 规范css代码以及完善HTML界面符合图标布局
+###二、旋转太极图（基于简单 css 动画完成效果）
 
-+ **核心代码**:
+* **程序逻辑:**
+
+  * 构建静态图
+  * 利用 transform 和 animation 完成动态效果
+  * 规范 css 代码以及完善 HTML 界面符合图标布局
+
+* **核心代码**:
+
 ```
   <i class="taichi"></i>
 
@@ -67,16 +52,20 @@
     }
 }
 ```
- + **效果展示:**
-![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/taiChi.png)
 
-###三、网站列表效果图（基于简单css动画完成效果）
-+ **程序逻辑**:
-    - 构建静态图
-    - 利用transform完成动态效果
-    - 规范css代码以及完善HTML界面符合图标布局
+* **效果展示:**
+  ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/taiChi.png)
 
-+ **核心代码**:
+###三、网站列表效果图（基于简单 css 动画完成效果）
+
+* **程序逻辑**:
+
+  * 构建静态图
+  * 利用 transform 完成动态效果
+  * 规范 css 代码以及完善 HTML 界面符合图标布局
+
+* **核心代码**:
+
 ```
 .box ul {
     display: flex;
@@ -111,19 +100,23 @@
     transform: translateY(-180px) scale(1);
 }
 ```
-+ **效果展示:**
-![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/index.png)
+
+* **效果展示:**
+  ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/index.png)
 
 <!-- + **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png) -->
 
-###四、3D曼陀罗导航栏效果图（基于简单css动画完成效果）
-+ **程序逻辑**:
-    - 构建静态图
-    - 利用transform完成动态效果
-    - 规范css代码以及完善HTML界面符合图标布局
+###四、3D 曼陀罗导航栏效果图（基于简单 css 动画完成效果）
 
-+ **核心代码**:
+* **程序逻辑**:
+
+  * 构建静态图
+  * 利用 transform 完成动态效果
+  * 规范 css 代码以及完善 HTML 界面符合图标布局
+
+* **核心代码**:
+
 ```
 .menu >li {
     /*选择子元素*/
@@ -154,9 +147,48 @@
     transition-delay: 0ms;
 }
 ```
-+ **效果展示:**
-![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/nav.png)
 
+* **效果展示:**
+  ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/nav.png)
 
+###四、简单旋转以及定位完成愤怒的小鸟（基于简单 css 动画完成效果）
 
+* **程序逻辑**:
 
+  * 构建静态图
+  * 利用 transform 完成动态效果
+  * 规范 css 代码以及完善 HTML 界面符合图标布局
+  * 合理化标签，用伪类取代标签，实现页面简单化
+
+* **核心代码**
+
+```
+    <div class="box">
+        <div class="zoom">
+        </div>
+    </div>
+
+   .box:before {
+    content: '';
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    border-top: red solid 100px;
+    border-left: red solid 100px;
+    border-right: transparent solid 100px;
+    border-bottom: transparent solid 100px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+    .box:hover:before {
+    transform: rotate(180deg);
+}
+```
+* **效果展示**
+ ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/bird.png)
