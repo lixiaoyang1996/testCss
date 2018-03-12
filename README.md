@@ -114,8 +114,8 @@
 + **效果展示:**
 ![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/index.png)
 
-+ **效果展示:**
-![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png)
+<!-- + **效果展示:**
+![Aaron Swartz](https://raw.githubusercontent.com/lixiaoyang1996/testCss/master/img/test.png) -->
 
 ###四、3D曼陀罗导航栏效果图（基于简单css动画完成效果）
 + **程序逻辑**:
